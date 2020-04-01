@@ -1,10 +1,12 @@
 import React from 'react';
+import DoctorFilter from '../container/DoctorFilter';
+import AppointmentsButton from './AppointmentsButton';
 
 const LeftSideBar = () => (
-    <ReactFragment>
-        <DoctorFilter />
-        <AppointmentsButton />
-    </ReactFragment>
-)
+  <>
+    <DoctorFilter />
+    <AppointmentsButton />
+  </>
+);
 
 export default LeftSideBar;
