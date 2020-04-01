@@ -1,6 +1,6 @@
 import React from 'react';
 import DoctorFilter from '../container/DoctorFilter';
-import AppointmentsButton from './AppointmentsButton';
+import AppointmentsButton from '../container/AppointmentsButton';
 
 const LeftSideBar = () => (
   <>
