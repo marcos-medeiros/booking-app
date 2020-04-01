@@ -14,20 +14,14 @@ const selectDoctor = doctor => ({
   doctor,
 });
 
-const scheduleAppointment = (date, time, doctor, patient) => ({
+const scheduleAppointment = appointment => ({
   type: ActionTypes.SCHEDULE_APPOINTMENT,
-  date,
-  time,
-  doctor,
-  patient,
+  appointment,
 });
 
-const cancelAppointment = (date, time, doctor, patient) => ({
+const cancelAppointment = appointment => ({
   type: ActionTypes.CANCEL_APPOINTMENT,
-  date,
-  time,
-  doctor,
-  patient,
+  appointment,
 });
 
 export {
