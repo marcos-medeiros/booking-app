@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import storeReducer from './reducers/storeReducer';
-import doctors from './helpers/doctors';
+import aircrafts from './helpers/aircrafts';
 
-const store = createStore(storeReducer, { doctors });
+const store = createStore(storeReducer, { aircrafts });
 
 export default store;

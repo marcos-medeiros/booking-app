@@ -1,10 +1,10 @@
 import React from 'react';
-import DoctorSearch from '../container/DoctorSearch';
+import AircraftSearch from '../container/AircraftSearch';
 import MainSwitchButton from '../container/MainSwitchButton';
 
 const LeftSideBar = () => (
   <>
-    <DoctorSearch />
+    <AircraftSearch />
     <MainSwitchButton />
   </>
 );

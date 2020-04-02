@@ -1,7 +1,7 @@
 import ActionTypes from './types';
 
-const changeDoctorFilter = filter => ({
-  type: ActionTypes.CHANGE_DOCTOR_FILTER,
+const changeFilter = filter => ({
+  type: ActionTypes.CHANGE_FILTER,
   filter,
 });
 
@@ -9,21 +9,21 @@ const switchMain = () => ({
   type: ActionTypes.SWITCH_MAIN,
 });
 
-const selectDoctor = doctor => ({
-  type: ActionTypes.SELECT_DOCTOR,
-  doctor,
+const selectAircraft = aircraft => ({
+  type: ActionTypes.SELECT_AIRCRAFT,
+  aircraft,
 });
 
-const scheduleAppointment = appointment => ({
-  type: ActionTypes.SCHEDULE_APPOINTMENT,
-  appointment,
+const scheduleTestFlight = testFlight => ({
+  type: ActionTypes.SCHEDULE_TEST_FLIGHT,
+  testFlight,
 });
 
-const cancelAppointment = appointment => ({
-  type: ActionTypes.CANCEL_APPOINTMENT,
-  appointment,
+const cancelTestFlight = testFlight => ({
+  type: ActionTypes.CANCEL_TEST_FLIGHT,
+  testFlight,
 });
 
 export {
-  changeDoctorFilter, switchMain, selectDoctor, scheduleAppointment, cancelAppointment,
+  changeFilter, switchMain, selectAircraft, scheduleTestFlight, cancelTestFlight,
 };

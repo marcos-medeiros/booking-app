@@ -4,7 +4,7 @@ import LeftSideBar from './LeftSideBar';
 import RightSideBar from './RightSideBar';
 
 const App = () => (
-  <div className="container">
+  <div>
     <LeftSideBar />
     <Main />
     <RightSideBar />

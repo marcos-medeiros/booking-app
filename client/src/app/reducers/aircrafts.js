@@ -1,12 +1,12 @@
 import ActionTypes from '../actions/types';
 
-const doctors = (state = [], { type }) => {
+const aircrafts = (state = [], { type }) => {
   switch (type) {
-    case ActionTypes.GET_DOCTORS:
+    case ActionTypes.GET_AIRCRAFTS:
       return state;
     default:
       return state;
   }
 };
 
-export default doctors;
+export default aircrafts;

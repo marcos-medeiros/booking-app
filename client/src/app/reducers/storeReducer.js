@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
-import appointments from './appointments';
-import doctor from './doctor';
+import testFlights from './testFlights';
+import aircraft from './aircraft';
 import filter from './filter';
 import main from './main';
-import doctors from './doctors';
+import aircrafts from './aircrafts';
 
 const storeReducer = combineReducers({
-  appointments,
-  doctor,
+  testFlights,
+  aircraft,
   filter,
   main,
-  doctors,
+  aircrafts,
 });
 
 export default storeReducer;

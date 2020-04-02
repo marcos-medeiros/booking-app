@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SpecialityFilter = ({
+const Filter = ({
   onChange, options,
 }) => (
   <div>
@@ -17,9 +17,9 @@ const SpecialityFilter = ({
   </div>
 );
 
-SpecialityFilter.propTypes = {
+Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default SpecialityFilter;
+export default Filter;
