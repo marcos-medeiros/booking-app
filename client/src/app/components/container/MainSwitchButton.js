@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-MainSwitchButton.defaultProps = {
+MainSwitchButton.propTypes = {
   switchMain: PropTypes.func.isRequired,
   main: PropTypes.bool.isRequired,
 };
