@@ -1,11 +1,11 @@
 import React from 'react';
 import DoctorFilter from '../container/DoctorFilter';
-import AppointmentsButton from '../container/AppointmentsButton';
+import MainSwitchButton from '../container/MainSwitchButton';
 
 const LeftSideBar = () => (
   <>
     <DoctorFilter />
-    <AppointmentsButton />
+    <MainSwitchButton />
   </>
 );
 
