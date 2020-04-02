@@ -1,24 +1,68 @@
+import bell from './img/bell.png';
+import bombardier from './img/bombardier.png';
+import cesnnaAmphibian from './img/cesnnaAmphibian.png';
+import cesnnaJet from './img/cesnnaJet.png';
+import eurocopter from './img/eurocopter.png';
+import gulfstream from './img/gulfstream.png';
+import robinson from './img/robinson.png';
+
+
 const aircrafts = [
   {
-    model: 'John Silver',
-    category: 'Heart Surgery',
+    model: 'Citation Longitude',
+    category: 'Jet',
     id: 1,
     testFlights: [],
-    manufacturer: 'Some',
+    manufacturer: 'Cesnna',
+    imgSrc: cesnnaJet,
   },
   {
-    model: 'Maria Salvatore',
-    category: 'Neurologist',
+    model: 'G280',
+    category: 'Jet',
     id: 2,
     testFlights: [],
-    manufacturer: 'Some',
+    manufacturer: 'Gulfstream',
+    imgSrc: gulfstream,
   },
   {
-    model: 'Miyoshiro Takahata',
-    category: 'Oncology',
+    model: 'Challenger',
+    category: 'Jet',
     id: 3,
     testFlights: [],
-    manufacturer: 'Some',
+    manufacturer: 'Bombardier',
+    imgSrc: bombardier,
+  },
+  {
+    model: 'AS 350 B3',
+    category: 'Helicopter',
+    id: 4,
+    testFlights: [],
+    manufacturer: 'Eurocopter',
+    imgSrc: eurocopter,
+  },
+  {
+    model: 'R-44',
+    category: 'Helicopter',
+    id: 5,
+    testFlights: [],
+    manufacturer: 'Robinson',
+    imgSrc: robinson,
+  },
+  {
+    model: '407GX',
+    category: 'Helicopter',
+    id: 6,
+    testFlights: [],
+    manufacturer: 'Bell',
+    imgSrc: bell,
+  },
+  {
+    model: 'Caravan',
+    category: 'Amphibian',
+    id: 7,
+    testFlights: [],
+    manufacturer: 'Cessna',
+    imgSrc: cesnnaAmphibian,
   },
 ];
 

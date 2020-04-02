@@ -1,9 +1,13 @@
-import React from 'react';;
+import React from 'react';
+import {connect} from 'react-redux';
 
-const Main = () => (
+const Main = ({aircraft}) => (
   <>
-    Test
+    <img src={aircraft.imgSrc}></img>
   </>
 );
 
-export default Main;
+const mapStateToProps = state => ({aircraft: state.aircraft});
+
+
+export default connect(mapStateToProps,null)(Main);

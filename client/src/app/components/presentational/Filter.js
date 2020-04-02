@@ -6,11 +6,11 @@ const Filter = ({
 }) => (
   <div>
     <h3>
-      Filter by speciality:
+      Filter by category:
     </h3>
     <select onChange={e => onChange(e.target.value)}>
       {
-      ['All', ...options.sort()].map(o => (
+      ['All', ...new Set(options)].sort().map(o => (
         <option key={o} value={o}>{o}</option>))
       }
     </select>

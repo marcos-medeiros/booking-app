@@ -6,7 +6,7 @@ import { switchMain } from '../../actions/actions';
 
 const MainSwitchButton = ({ switchMain, main }) => {
   let buttonText;
-  if (main) { buttonText = 'My Appointments'; } else { buttonText = 'Back to calendar'; }
+  if (main) { buttonText = 'My test flights'; } else { buttonText = 'Back'; }
 
   return (
     <Button onClick={switchMain} buttonText={buttonText} />

@@ -9,7 +9,7 @@ const AircraftsList = ({ onClick, options, filter }) => (
     <ul>
       {
           /*eslint-disable */
-                [...options.filter(o => filter === 'All' ? o : o.category === filter).sort()].map(o => <li key={o.id} onClick={onClick(o)}>{o.manufacturer + ' - ' + o.model}</li>)
+                [...options.filter(o => filter === 'All' ? o : o.category === filter).sort()].map(o => <li key={o.id} onClick={() => onClick(o)}>{o.manufacturer + ' - ' + o.model}</li>)
         /* eslint-enable */
         }
     </ul>

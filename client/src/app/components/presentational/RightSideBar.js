@@ -1,10 +1,10 @@
 import React from 'react';
-import DoctorProfile from '../container/DoctorProfile';
+import AircraftSpecs from '../container/AircraftSpecs';
 import ScheduleForm from '../container/ScheduleForm';
 
 const RightSideBar = () => (
   <>
-    <DoctorProfile />
+    <AircraftSpecs />
     <ScheduleForm />
   </>
 );
