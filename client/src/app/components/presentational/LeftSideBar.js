@@ -1,10 +1,10 @@
 import React from 'react';
-import DoctorFilter from '../container/DoctorFilter';
+import DoctorSearch from '../container/DoctorSearch';
 import MainSwitchButton from '../container/MainSwitchButton';
 
 const LeftSideBar = () => (
   <>
-    <DoctorFilter />
+    <DoctorSearch />
     <MainSwitchButton />
   </>
 );
