@@ -1,13 +1,18 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Main = ({aircraft}) => (
+const Main = ({ aircraft }) => (
   <>
-    <img src={aircraft.imgSrc}></img>
+    <img src={aircraft.imgSrc} alt={`${aircraft.manufacturer} - ${aircraft.model}`} />
   </>
 );
 
-const mapStateToProps = state => ({aircraft: state.aircraft});
+Main.propTypes = {
+  aircraft: PropTypes.shape.isRequired,
+};
+
+const mapStateToProps = state => ({ aircraft: state.aircraft });
 
 
-export default connect(mapStateToProps,null)(Main);
+export default connect(mapStateToProps, null)(Main);
