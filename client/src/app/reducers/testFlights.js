@@ -5,7 +5,7 @@ const testFlights = (state = [], { type, testFlight }) => {
     case ActionTypes.SCHEDULE_TEST_FLIGHT:
       return [...state, testFlight];
     case ActionTypes.CANCEL_TEST_FLIGHT:
-      return state.filter(a => a.id !== testFlight.id);
+      return state.filter(t => t.id !== testFlight.id);
     default:
       return state;
   }

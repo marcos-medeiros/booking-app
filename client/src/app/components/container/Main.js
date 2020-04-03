@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AircraftImage from '../presentational/AircraftImage';
 import ScheduledTestFlights from '../presentational/ScheduledTestFlights';
+import { cancelTestFlight } from '../../actions/actions';
 
 const Main = ({
-  aircraft, main, testFlights, user, aircrafts,
+  aircraft, main, testFlights, user, aircrafts, cancelTestFlight,
 }) => (
   <>
     {
@@ -15,6 +16,7 @@ const Main = ({
           <ScheduledTestFlights
             testFlights={testFlights.filter(t => t.userId === user.id)}
             aircrafts={aircrafts}
+            onClick={cancelTestFlight}
           />
         )
     }
@@ -36,6 +38,7 @@ Main.propTypes = {
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
+  cancelTestFlight: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -46,5 +49,11 @@ const mapStateToProps = state => ({
   testFlights: state.testFlights,
 });
 
+const mapDispatchToProps = dispatch => ({
+  cancelTestFlight: testFlight => {
+    dispatch(cancelTestFlight(testFlight));
+  },
+});
 
-export default connect(mapStateToProps, null)(Main);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
