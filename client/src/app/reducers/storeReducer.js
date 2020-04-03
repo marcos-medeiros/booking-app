@@ -4,6 +4,7 @@ import aircraft from './aircraft';
 import filter from './filter';
 import main from './main';
 import aircrafts from './aircrafts';
+import user from './user';
 
 const storeReducer = combineReducers({
   testFlights,
@@ -11,6 +12,7 @@ const storeReducer = combineReducers({
   filter,
   main,
   aircrafts,
+  user,
 });
 
 export default storeReducer;
