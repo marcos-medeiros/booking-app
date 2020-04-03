@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from '../container/Main';
 import LeftSideBar from './LeftSideBar';
-import RightSideBar from './RightSideBar';
+import RightSideBar from '../container/RightSideBar';
 
 const App = () => (
   <div>

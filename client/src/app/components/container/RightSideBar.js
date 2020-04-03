@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import AircraftSpecs from '../container/AircraftSpecs';
-import ScheduleForm from '../container/ScheduleForm';
+import AircraftSpecs from '../presentational/AircraftSpecs';
+import ScheduleForm from '../presentational/ScheduleForm';
 import { scheduleTestFlight } from '../../actions/actions';
 
 const RightSideBar = ({ aircraft, scheduleTestFlight }) => (

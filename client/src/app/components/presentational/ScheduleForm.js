@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ScheduleForm = () => (
+const ScheduleForm = ({onClick}) => (
   <p>Test</p>
 );
 
