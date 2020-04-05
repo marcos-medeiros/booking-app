@@ -14,7 +14,7 @@ const ScheduledTestFlights = ({ testFlights, aircrafts, onClick }) => (
               <h4>{a.manufacturer}</h4>
             </div>
           ))}
-          <p>{`${t.date} ${t.time}`}</p>   
+          <p>{`${t.date}`}</p>   
           <div onClick={() => onClick(t)}>
             Cancel
           </div>

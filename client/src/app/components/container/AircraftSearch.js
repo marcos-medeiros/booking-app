@@ -6,11 +6,17 @@ import AircraftsList from '../presentational/AircraftsList';
 import { changeFilter, selectAircraft } from '../../actions/actions';
 
 const AircraftSearch = ({
-  filter, aircrafts, changeFilter, selectAircraft,
+  filter, aircrafts, changeFilter, selectAircraft, main,
 }) => (
   <>
-    <Filter onChange={changeFilter} options={aircrafts.map(a => a.category)} />
-    <AircraftsList onClick={selectAircraft} options={aircrafts} filter={filter} />
+    {main
+      ? (
+        <>
+          <Filter onChange={changeFilter} options={aircrafts.map(a => a.category)} />
+          <AircraftsList onClick={selectAircraft} options={aircrafts} filter={filter} />
+        </>
+      )
+      : null}
   </>
 );
 
@@ -19,11 +25,13 @@ AircraftSearch.propTypes = {
   selectAircraft: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   aircrafts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  main: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
   filter: state.filter,
   aircrafts: state.aircrafts,
+  main: state.main,
 });
 
 const mapDispatchToProps = dispatch => ({

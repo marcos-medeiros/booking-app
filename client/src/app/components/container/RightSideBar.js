@@ -1,29 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import AircraftSpecs from '../presentational/AircraftSpecs';
 import ScheduleForm from '../presentational/ScheduleForm';
 import Button from '../presentational/Button';
 import { scheduleTestFlight, changeFormVisibility } from '../../actions/actions';
 
 const RightSideBar = ({
-  aircraft, scheduleTestFlight, formVisibility, changeFormVisibility, user,
+  aircraft, scheduleTestFlight, formVisibility, changeFormVisibility, user, main,
 }) => {
   const onClick = date => {
+    const convertedDate = moment(date);
+    const formatedDate = convertedDate.format('MMMM Do YYYY, h:mm a');
     scheduleTestFlight({
-      userId: user.id, aircraftId: aircraft.id, date,
+      userId: user.id, aircraftId: aircraft.id, date: formatedDate,
     });
     changeFormVisibility();
   };
 
   return (
     <>
-      <AircraftSpecs aircraft={aircraft} />
-      {
+      {main ? (
+        <>
+          <AircraftSpecs aircraft={aircraft} />
+          {
       formVisibility
         ? <ScheduleForm onClick={onClick} onCancel={changeFormVisibility} />
         : <Button buttonText="Schedule test flight" onClick={changeFormVisibility} />
     }
+        </>
+      ) : null}
     </>
   );
 };
@@ -43,17 +50,19 @@ RightSideBar.propTypes = {
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
+  main: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
   aircraft: state.aircraft,
   formVisibility: state.formVisibility,
   user: state.user,
+  main: state.main,
 });
 
 const mapDispatchToProps = dispatch => ({
-  scheduleTestFlight: testFLight => {
-    dispatch(scheduleTestFlight(testFLight));
+  scheduleTestFlight: testFlight => {
+    dispatch(scheduleTestFlight(testFlight));
   },
   changeFormVisibility: () => {
     dispatch(changeFormVisibility());

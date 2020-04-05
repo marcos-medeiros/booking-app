@@ -10,7 +10,7 @@ class ScheduleForm extends React.Component {
     super(props);
     this.coeff = 1000 * 60 * 30;
     this.state = {
-      selectedDate: new Date().setHours(9,0),
+      selectedDate: new Date().setHours(9, 0),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,14 +22,14 @@ class ScheduleForm extends React.Component {
 
 
   render() {
-    const { onCancel } = this.props;
+    const { onCancel, onClick } = this.props;
     const { selectedDate } = this.state;
     const { handleChange } = this;
     const maxDate = new Date();
     maxDate.setDate(maxDate.getDate() + 90);
     const minDate = new Date();
-    const minTime = minDate.setHours(9,0);
-    const maxTime = maxDate.setHours(17,0);
+    const minTime = minDate.setHours(9, 0);
+    const maxTime = maxDate.setHours(17, 0);
     return (
       <div>
         <Button buttonText="x" onClick={onCancel} />
@@ -43,7 +43,7 @@ class ScheduleForm extends React.Component {
           minTime={minTime}
           maxTime={maxTime}
         />
-        <Button buttonText="Schedule" onClick={onCancel} />
+        <Button buttonText="Schedule" onClick={() => onClick(selectedDate)} />
       </div>
 
     );
@@ -52,6 +52,7 @@ class ScheduleForm extends React.Component {
 
 ScheduleForm.propTypes = {
   onCancel: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ScheduleForm;
