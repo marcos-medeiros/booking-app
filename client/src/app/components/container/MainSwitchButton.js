@@ -5,8 +5,7 @@ import Button from '../presentational/Button';
 import { switchMain } from '../../actions/actions';
 
 const MainSwitchButton = ({ switchMain, main }) => {
-  let buttonText;
-  if (main) { buttonText = 'My test flights'; } else { buttonText = 'Back'; }
+  const buttonText = main ? 'My test flights' : 'Back';
 
   return (
     <Button onClick={switchMain} buttonText={buttonText} />

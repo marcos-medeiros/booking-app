@@ -5,6 +5,7 @@ import filter from './filter';
 import main from './main';
 import aircrafts from './aircrafts';
 import user from './user';
+import formVisibility from './formVisibility';
 
 const storeReducer = combineReducers({
   testFlights,
@@ -13,6 +14,7 @@ const storeReducer = combineReducers({
   main,
   aircrafts,
   user,
+  formVisibility,
 });
 
 export default storeReducer;

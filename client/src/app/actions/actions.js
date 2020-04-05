@@ -5,6 +5,10 @@ const changeFilter = filter => ({
   filter,
 });
 
+const changeFormVisibility = () => ({
+  type: ActionTypes.CHANGE_FORM_VISIBILITY,
+});
+
 const switchMain = () => ({
   type: ActionTypes.SWITCH_MAIN,
 });
@@ -26,4 +30,5 @@ const cancelTestFlight = testFlight => ({
 
 export {
   changeFilter, switchMain, selectAircraft, scheduleTestFlight, cancelTestFlight,
+  changeFormVisibility,
 };

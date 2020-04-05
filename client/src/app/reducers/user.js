@@ -1,12 +1,3 @@
-import ActionTypes from '../actions/types';
-
-const user = (state = {}, { type }) => {
-  switch (type) {
-    case ActionTypes.GET_USER:
-      return state;
-    default:
-      return state;
-  }
-};
+const user = (state = {}) => (state);
 
 export default user;
