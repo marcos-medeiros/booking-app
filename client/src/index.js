@@ -2,17 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import LeftSideBar from './app/components/container/LeftSideBar';
-import Main from './app/components/container/Main';
-import RightSideBar from './app/components/container/RightSideBar';
 import store from './app/store';
+import App from './app/components/container/App';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <LeftSideBar />
-      <Main />
-      <RightSideBar />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

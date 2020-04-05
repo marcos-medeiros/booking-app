@@ -5,10 +5,10 @@ import moment from 'moment';
 import AircraftSpecs from '../presentational/AircraftSpecs';
 import ScheduleForm from '../presentational/ScheduleForm';
 import Button from '../presentational/Button';
-import { scheduleTestFlight, changeFormVisibility } from '../../actions/actions';
+import { scheduleTestFlight, changeFormVisibility, logoutUser } from '../../actions/actions';
 
 const RightSideBar = ({
-  aircraft, scheduleTestFlight, formVisibility, changeFormVisibility, user, main,
+  aircraft, scheduleTestFlight, formVisibility, changeFormVisibility, user, main, logoutUser,
 }) => {
   const onClick = date => {
     const convertedDate = moment(date);
@@ -31,6 +31,7 @@ const RightSideBar = ({
     }
         </>
       ) : null}
+      <Button buttonText="Log Out" onClick={logoutUser} />
     </aside>
   );
 };
@@ -51,6 +52,7 @@ RightSideBar.propTypes = {
     id: PropTypes.number.isRequired,
   }).isRequired,
   main: PropTypes.bool.isRequired,
+  logoutUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -66,6 +68,9 @@ const mapDispatchToProps = dispatch => ({
   },
   changeFormVisibility: () => {
     dispatch(changeFormVisibility());
+  },
+  logoutUser: () => {
+    dispatch(logoutUser());
   },
 });
 

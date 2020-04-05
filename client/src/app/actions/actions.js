@@ -28,7 +28,14 @@ const cancelTestFlight = testFlight => ({
   testFlight,
 });
 
+const loginUser = username => ({
+  type: ActionTypes.LOGIN_USER,
+  username,
+});
+
+const logoutUser = () => ({ type: ActionTypes.LOGOUT_USER });
+
 export {
   changeFilter, switchMain, selectAircraft, scheduleTestFlight, cancelTestFlight,
-  changeFormVisibility,
+  changeFormVisibility, loginUser, logoutUser,
 };

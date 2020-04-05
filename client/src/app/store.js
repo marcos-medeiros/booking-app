@@ -2,9 +2,10 @@ import { createStore } from 'redux';
 import storeReducer from './reducers/storeReducer';
 import aircrafts from './helpers/aircrafts';
 import testFlights from './helpers/testFlights';
+import users from './helpers/users';
 
 const store = createStore(storeReducer, {
-  aircrafts, user: { id: 1, name: 'marcos' }, testFlights, aircraft: aircrafts[0],
+  aircrafts, testFlights, aircraft: aircrafts[0], users,
 });
 
 export default store;
