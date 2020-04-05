@@ -20,7 +20,7 @@ const RightSideBar = ({
   };
 
   return (
-    <>
+    <aside>
       {main ? (
         <>
           <AircraftSpecs aircraft={aircraft} />
@@ -31,7 +31,7 @@ const RightSideBar = ({
     }
         </>
       ) : null}
-    </>
+    </aside>
   );
 };
 

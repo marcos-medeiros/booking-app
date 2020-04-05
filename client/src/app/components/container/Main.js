@@ -8,7 +8,7 @@ import { cancelTestFlight } from '../../actions/actions';
 const Main = ({
   aircraft, main, testFlights, user, aircrafts, cancelTestFlight,
 }) => (
-  <>
+  <main>
     {
       main
         ? <AircraftImage src={aircraft.imgSrc} alt={`${aircraft.manufacturer} - ${aircraft.model}`} />
@@ -20,7 +20,7 @@ const Main = ({
           />
         )
     }
-  </>
+  </main>
 );
 
 Main.propTypes = {

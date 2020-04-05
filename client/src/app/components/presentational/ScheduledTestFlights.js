@@ -7,7 +7,7 @@ const ScheduledTestFlights = ({ testFlights, aircrafts, onClick }) => (
   <div>
     {
       testFlights.map(t => (
-        <div key={t.id}>
+        <div key={`${t.id} ${t.aircraftId} ${t.userId}`}>
           {aircrafts.filter(a => a.id === t.aircraftId).map(a => (
             <div key={`${t.id} - ${a.id}`}>
               <h3>{a.model}</h3>
