@@ -5,7 +5,7 @@ const Button = ({ buttonText, onClick, styleClass }) => (
   /*eslint-disable */
   <button className={styleClass} onClick={onClick}>
   {/* eslint-enable */}
-<p>{buttonText}</p>
+    <p>{buttonText}</p>
   </button>
 );
 Button.propTypes = {
