@@ -32,8 +32,19 @@ const MyTestFlights = ({ testFlights, aircrafts, onClick }) => (
 );
 
 MyTestFlights.propTypes = {
-  testFlights: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  aircrafts: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  testFlights: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    aircraftId: PropTypes.number.isRequired,
+    date: PropTypes.string.isRequired,
+  })).isRequired,
+  aircrafts: PropTypes.arrayOf(PropTypes.shape({
+    model: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    manufacturer: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+  })).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

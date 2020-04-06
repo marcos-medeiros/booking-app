@@ -7,7 +7,7 @@ const testFlights = [
   },
   {
     userId: 1,
-    aircraftId: 1,
+    aircraftId: 2,
     date: new Date(),
     id: 2,
   },

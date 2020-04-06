@@ -30,7 +30,7 @@ const aircrafts = [
   {
     model: '407GX',
     category: 'Helicopter',
-    id: 6,
+    id: 3,
     manufacturer: 'Bell',
     imgSrc: bell,
     speed: '132 kts - 244 km/h',
@@ -41,7 +41,7 @@ const aircrafts = [
   {
     model: 'Caravan',
     category: 'Amphibian',
-    id: 7,
+    id: 4,
     manufacturer: 'Cessna',
     imgSrc: cesnnaAmphibian,
     speed: '162 kts - 300 km/h',
