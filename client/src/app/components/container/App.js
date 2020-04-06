@@ -6,42 +6,53 @@ import Main from '../presentational/Main';
 import Login from '../presentational/Login';
 import {
   loginUser, changeFilter, selectAircraft, cancelTestFlight, scheduleTestFlight,
-  changeFormVisibility, logoutUser,
+  changeFormVisibility, logoutUser, fetchData,
 } from '../../actions/actions';
 
-const App = ({
-  user, loginUser, filter, aircrafts, changeFilter, selectAircraft, aircraft, formVisibility,
-  cancelTestFlight, testFlights, scheduleTestFlight, logoutUser, changeFormVisibility,
-}) => (
-  <>
-    {user !== null
-      ? (
-        <div className="container">
-          <LeftMenu
-            user={user}
-            filter={filter}
-            aircraft={aircraft}
-            aircrafts={aircrafts}
-            selectAircraft={selectAircraft}
-            changeFilter={changeFilter}
-            cancelTestFlight={cancelTestFlight}
-            testFlights={testFlights}
-          />
-          <Main
-            aircraft={aircraft}
-            scheduleTestFlight={scheduleTestFlight}
-            formVisibility={formVisibility}
-            changeFormVisibility={changeFormVisibility}
-            user={user}
-            logoutUser={logoutUser}
-          />
-        </div>
-      )
-      : <Login onClick={loginUser} />}
+class App extends React.Component {
+  
+  componentWillMount() {
+    const {fetchData} = this.props;
+    fetchData('aircrafts');
+  }
 
 
-  </>
-);
+  render() {
+    const {
+      user, loginUser, filter, aircrafts, changeFilter, selectAircraft, aircraft, formVisibility,
+      cancelTestFlight, testFlights, scheduleTestFlight, logoutUser, changeFormVisibility,
+    } = this.props;
+
+    return (
+      <>
+        {user !== null
+          ? (
+            <div className="container">
+              <LeftMenu
+                user={user}
+                filter={filter}
+                aircraft={aircraft}
+                aircrafts={aircrafts}
+                selectAircraft={selectAircraft}
+                changeFilter={changeFilter}
+                cancelTestFlight={cancelTestFlight}
+                testFlights={testFlights}
+              />
+              <Main
+                aircraft={aircraft}
+                scheduleTestFlight={scheduleTestFlight}
+                formVisibility={formVisibility}
+                changeFormVisibility={changeFormVisibility}
+                user={user}
+                logoutUser={logoutUser}
+              />
+            </div>
+          )
+          : <Login onClick={loginUser} />}
+      </>
+    );
+  }
+}
 
 App.propTypes = {
   user: PropTypes.shape({
@@ -71,6 +82,7 @@ App.propTypes = {
     aircraftId: PropTypes.number.isRequired,
     date: PropTypes.string.isRequired,
   })).isRequired,
+  fetchData: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -95,14 +107,17 @@ const mapDispatchToProps = dispatch => ({
   logoutUser: () => {
     dispatch(logoutUser());
   },
+  fetchData: data => {
+    fetchData(data)(dispatch);
+  },
 });
 
 const mapStateToProps = state => ({
   filter: state.filter,
-  aircrafts: state.aircrafts,
+  aircrafts: state.aircrafts.items,
   user: state.user,
   aircraft: state.aircraft,
-  testFlights: state.testFlights,
+  testFlights: state.testFlights.items,
   formVisibility: state.formVisibility,
 });
 

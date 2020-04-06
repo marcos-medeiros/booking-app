@@ -1,11 +1,9 @@
-import { createStore } from 'redux';
-import storeReducer from './reducers/storeReducer';
-import aircrafts from './helpers/aircrafts';
-import testFlights from './helpers/testFlights';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers/rootReducer';
 import users from './helpers/users';
 
-const store = createStore(storeReducer, {
-  aircrafts, testFlights, aircraft: aircrafts[0], users,
-});
+const store = createStore(rootReducer, { users,
+}, applyMiddleware(thunk));
 
 export default store;
