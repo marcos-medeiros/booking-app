@@ -1,13 +1,263 @@
+@import  url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #97BF10;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+.login {
+  margin: 300px auto 0 auto;
+  width: 400px;
+  text-align: center;
+  padding: 50px 50px;
+  border: 1px solid gray;
+  border-radius: 12px;
+  box-shadow: 6px 6px 36px 3px black;
+  background-color: white;
+  }
+
+  .login-label {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+
+  .login input {
+    width: 100%;
+  }
+
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #97BF10;
+    text-align: center;
+    margin: 0 auto 40px auto;
+  }
+
+  .btn {
+    border: none;
+    width: max-content;
+    text-align: center;
+    color: white;
+    background-color: #97BF10;
+    border-radius: 25px;
+    height: 50px;
+    margin: 40px auto 0 auto;
+  }
+
+  .btn-cancel {
+    border: 1px solid #97BF10;
+    color: #97BF10;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    margin-left: 2rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  } 
+
+  .btn-cancel p {
+    margin: 0 auto;
+  }
+
+  .btn-schedule {
+    position: absolute;
+    bottom: 50px;
+    width: 20%;
+    background-color: #97BF10;
+    color: white;
+    border-radius: 25px;
+    left: 40%;
+  }
+
+  .btn p {
+    margin: 0;
+    padding: 15px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+
+  .schedule-form {
+    height: 250px;
+    background-color: black;
+    width: 40%;
+    position: absolute;
+    bottom: 50px;
+    left: 30%;
+    background-color: white;
+    border: 1px solid #F1F1F1;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px black;
+  }
+
+  .form-title {
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 30px;
+    text-align: center;
+  }
+
+  .btn-schedule-confirm {
+    background-color: #97BF10;
+    color: white;
+    border-radius: 25px;
+    width: 20%;
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+  }
+
+  .react-datepicker-wrapper {
+    width: 30%;
+    position: absolute;
+    left: 31%;
+    top: 100px;
+  }
+
+  .container {
+    height: 98vh;
+    width: 98vw;
+    background-color: white;
+    margin: 0 auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: -6px 6px 36px 1px black;
+    display: flex;
+  }
+
+  .aside-left {
+    width: 20%;
+    border-right: 1px solid #F1F1F1;
+    text-align: left;
+    height: 100%;
+  }
+
+  main {
+    width: 70%;
+  }
+
+  .aside-right {
+    width: 20%;
+    position: relative;
+  }
+
+  .item-container {
+    height: 37vh;
+    overflow: auto;
+  }
+
+  .left-menu-label {
+    font-weight: bold;
+    padding: 1rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+    background-color: #97BF10;
+    color: white;
+  }
+
+  .left-menu-item {
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    text-align: left;
+  }
+
+  .selected-item {
+    color: #97BF10;
+  }
+
+  .test-flight-info {
+    text-align: left;
+    padding: 0.5rem 0 0.5rem 2rem;
+    width: 80%;
+  }
+  .test-flight {
+    display: flex;
+    position: relative;
+  }
+  
+  .tfi-1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .tfi-2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+  }
+
+  hr {
+    width: 80%;
+    background-color: #F1F1F1;
+  }
+
+  button {
+    border: none;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+  }
+
+  main {
+    position: relative;
+  }
+
+  .image-container {
+    margin: 0 auto;
+    width: 90%;
+    position: absolute;
+    bottom: 350px;
+    left: 5%;
+  }
+  .aircraft-image {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .specs-container {
+    margin-top: 200px;
+  }
+
+  .aircraft-model-maker p {
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 2rem 0 0;
+  }
+
+  .specs {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #F1F1F1;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-right: 2rem;
+  }
+
+  .specs p {  
+    margin: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .specs-negative {
+    background-color: #F1F1F1;
+  }
+
+  .btn-logout {
+    border: 1px solid #97BF10;
+    background-color: white;
+    color: #97BF10;
+    border-radius: 25px;
+    width: 30%;
+    position: absolute;
+    bottom: 50px;
+    right: 35%;
+  }

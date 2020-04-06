@@ -24,9 +24,11 @@ class Login extends React.Component {
     const { inputValue } = this.state;
 
     return (
-      <div>
+      <div className="login">
+        <h3 className="logo">AeroTest</h3>
+        <p className="login-label">Username:</p>
         <input type="text" onChange={handleChange} />
-        <Button buttonText="Sign In" onClick={() => onClick(inputValue)} />
+        <Button styleClass="btn" buttonText="Sign In" onClick={() => onClick(inputValue)} />
       </div>
 
     );

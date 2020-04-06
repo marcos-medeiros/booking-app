@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AircraftImage = ({ src, alt }) => (
-  <img src={src} alt={alt} />
+
+  <div className="image-container">
+    <img className="aircraft-image" src={src} alt={alt} />
+  </div>
+
 );
 
 AircraftImage.propTypes = {

@@ -31,8 +31,9 @@ class ScheduleForm extends React.Component {
     const minTime = minDate.setHours(9, 0);
     const maxTime = maxDate.setHours(17, 0);
     return (
-      <div>
-        <Button buttonText="x" onClick={onCancel} />
+      <div className="schedule-form">
+        <Button styleClass="btn-cancel" buttonText="x" onClick={onCancel} />
+        <p className="form-title">Choose a date and time</p>
         <DatePicker
           selected={selectedDate}
           onChange={handleChange}
@@ -43,7 +44,7 @@ class ScheduleForm extends React.Component {
           minTime={minTime}
           maxTime={maxTime}
         />
-        <Button buttonText="Schedule" onClick={() => onClick(selectedDate)} />
+        <Button styleClass="btn-schedule-confirm" buttonText="Schedule" onClick={() => onClick(selectedDate)} />
       </div>
 
     );

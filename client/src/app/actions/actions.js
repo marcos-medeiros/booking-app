@@ -9,10 +9,6 @@ const changeFormVisibility = () => ({
   type: ActionTypes.CHANGE_FORM_VISIBILITY,
 });
 
-const switchMain = () => ({
-  type: ActionTypes.SWITCH_MAIN,
-});
-
 const selectAircraft = aircraft => ({
   type: ActionTypes.SELECT_AIRCRAFT,
   aircraft,
@@ -36,6 +32,6 @@ const loginUser = username => ({
 const logoutUser = () => ({ type: ActionTypes.LOGOUT_USER });
 
 export {
-  changeFilter, switchMain, selectAircraft, scheduleTestFlight, cancelTestFlight,
+  changeFilter, selectAircraft, scheduleTestFlight, cancelTestFlight,
   changeFormVisibility, loginUser, logoutUser,
 };

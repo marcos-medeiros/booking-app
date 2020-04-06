@@ -2,39 +2,50 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AircraftSpecs = ({ aircraft }) => (
-  <div>
-    <h3>Specs</h3>
-    <ul>
-      <li>
-        Model:
-        {aircraft.model}
-      </li>
-      <li>
-        Manufacturer:
-        {aircraft.manufacturer}
-      </li>
-      <li>
-        Category:
-        {aircraft.category}
-      </li>
-      <li>
-        Max Speed:
-        {aircraft.speed}
-      </li>
-      <li>
-        Fuel Economy:
-        {aircraft.fuel}
-      </li>
-      <li>
-        Max Range:
-        {aircraft.range}
-      </li>
-      <li>
-        Price:
-        {aircraft.price}
-      </li>
-    </ul>
+  <div className="specs-container">
+    <div className="aircraft-model-maker">
+      <p>{aircraft.model}</p>
+      <p>{aircraft.manufacturer}</p>
+    </div>
+    <div className="specs">
+      <div className="specs-negative">
+        <p>
+          Category:
+          {' '}
+          {aircraft.category}
+        </p>
+      </div>
+      <div>
+        <p>
+          Max Speed:
+          {' '}
+          {aircraft.speed}
+        </p>
+      </div>
+      <div className="specs-negative">
+        <p>
+          Fuel Economy:
+          {' '}
+          {aircraft.fuel}
+        </p>
+      </div>
+      <div>
+        <p>
+          Max Range:
+          {' '}
+          {aircraft.range}
+        </p>
+      </div>
+      <div className="specs-negative">
+        <p>
+          Price:
+          {' '}
+          {aircraft.price}
+        </p>
+      </div>
+    </div>
   </div>
+
 );
 
 AircraftSpecs.propTypes = {

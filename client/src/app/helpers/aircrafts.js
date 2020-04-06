@@ -1,10 +1,7 @@
 import bell from './img/bell.png';
-import bombardier from './img/bombardier.png';
 import cesnnaAmphibian from './img/cesnnaAmphibian.png';
 import cesnnaJet from './img/cesnnaJet.png';
-import eurocopter from './img/eurocopter.png';
 import gulfstream from './img/gulfstream.png';
-import robinson from './img/robinson.png';
 
 
 const aircrafts = [
@@ -29,39 +26,6 @@ const aircrafts = [
     range: '3400 nm - 6297 km',
     fuel: '1.79 nm/g - 0.763 km/l',
     price: 'US$ 24 million',
-  },
-  {
-    model: 'Challenger',
-    category: 'Jet',
-    id: 3,
-    manufacturer: 'Bombardier',
-    imgSrc: bombardier,
-    speed: '470 kts - 870 km/h',
-    range: '4045 nm - 7491 km',
-    fuel: '1.36 nm/g - 0.665 km/l',
-    price: 'US$ 27 million',
-  },
-  {
-    model: 'AS 350 B3',
-    category: 'Helicopter',
-    id: 4,
-    manufacturer: 'Eurocopter',
-    imgSrc: eurocopter,
-    speed: '140 kts - 259 km/h',
-    range: '365 nm - 676 km',
-    fuel: '2.87 nm/g - 1.404 km/l',
-    price: 'US$ 1.95 million',
-  },
-  {
-    model: 'R-44',
-    category: 'Helicopter',
-    id: 5,
-    manufacturer: 'Robinson',
-    imgSrc: robinson,
-    speed: '110 kts - 204 km/h',
-    range: '348 nm - 644 km',
-    fuel: '7.12 nm/g - 3.483 km/l',
-    price: 'US$ 0.45 million',
   },
   {
     model: '407GX',
