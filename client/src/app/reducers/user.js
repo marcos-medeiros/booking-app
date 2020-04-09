@@ -1,9 +1,6 @@
 import ActionTypes from '../actions/types';
-import users from '../helpers/users';
 
-const user = (state = null, { type, username }) => {
-  const user = users.filter(u => u.name === username);
-
+const user = (state = null, { type, user }) => {
   switch (type) {
     case ActionTypes.LOGIN_USER:
       return user;

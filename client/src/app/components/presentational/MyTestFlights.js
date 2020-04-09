@@ -13,14 +13,14 @@ const MyTestFlights = ({ testFlights, aircrafts, onClick }) => (
       {
         testFlights.map(t => (
           <>
-            <div className='test-flight' key={`${t.id} ${t.aircraftId} ${t.userId}`}>
-              {aircrafts.filter(a => a.id === t.aircraftId).map(a => (
+            <div className='test-flight' key={`${t.id} ${t.aircraft_id} ${t.user_id}`}>
+              {aircrafts.filter(a => a.id === t.aircraft_id).map(a => (
                 <div className='test-flight-info' key={`${t.id} - ${a.id}`}>
                   <p className='tfi-1'>{`${a.model} - ${a.manufacturer} `}</p>
                   <p className='tfi-2'>{`${t.date}`}</p>  
                 </div>
               ))} 
-              <Button buttonText='X' styleClass='btn-cancel' onClick={() => onClick(t)} />
+              <Button buttonText='X' styleClass='btn-cancel' onClick={() => onClick(t.id)} />
             </div>
             <hr />
           </>

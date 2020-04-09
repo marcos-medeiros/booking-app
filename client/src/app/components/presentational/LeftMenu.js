@@ -13,6 +13,9 @@ const LeftMenu = ({
     const categoryAircrafts = [...aircrafts.filter(a => (filter === 'All' ? a : a.category === filter)).sort()];
     selectAircraft(categoryAircrafts[0]);
   };
+  const handleCancel = id => {
+    cancelTestFlight('tests', id.toString());
+  };
 
 
   return (
@@ -28,12 +31,12 @@ const LeftMenu = ({
         filter={filter}
         aircraft={aircraft}
       />
-      {testFlights.filter(t => t.userId === user.id).length > 1
+      {testFlights.filter(t => t.user_id === user.id).length >= 1
         ? (
           <MyTestFlights
-            testFlights={testFlights.filter(t => t.userId === user.id)}
+            testFlights={testFlights.filter(t => t.user_id === user.id)}
             aircrafts={aircrafts}
-            onClick={cancelTestFlight}
+            onClick={handleCancel}
           />
         )
         : null}

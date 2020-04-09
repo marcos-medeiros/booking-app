@@ -8,16 +8,6 @@ const initialState = {
 
 const testFlights = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.SCHEDULE_TEST_FLIGHT:
-      return {
-        ...state,
-        items: [...state.items, action.testFlight],
-      };
-    case ActionTypes.CANCEL_TEST_FLIGHT:
-      return {
-        ...state,
-        items: [...state.items.filter(t => t.id !== action.testFlight.id)],
-      };
     case ActionTypes.FETCH_TESTFLIGHTS_BEGIN:
       return {
         ...state,

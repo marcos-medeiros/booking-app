@@ -14,30 +14,13 @@ const selectAircraft = aircraft => ({
   aircraft,
 });
 
-const scheduleTestFlight = testFlight => ({
-  type: ActionTypes.SCHEDULE_TEST_FLIGHT,
-  testFlight,
-});
-
-const cancelTestFlight = testFlight => ({
-  type: ActionTypes.CANCEL_TEST_FLIGHT,
-  testFlight,
-});
-
-const loginUser = username => ({
+const loginUser = user => ({
   type: ActionTypes.LOGIN_USER,
-  username,
+  user,
 });
 
 const logoutUser = () => ({ type: ActionTypes.LOGOUT_USER });
 
-// Handle HTTP errors since fetch won't.
-const handleErrors = response => {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-};
 
 const fetchDataBegin = data => {
   switch (data) {
@@ -49,7 +32,7 @@ const fetchDataBegin = data => {
       return ({
         type: ActionTypes.FETCH_USERS_BEGIN,
       });
-    case 'testFlights':
+    case 'tests':
       return ({
         type: ActionTypes.FETCH_TESTFLIGHTS_BEGIN,
       });
@@ -70,7 +53,7 @@ const fetchDataSuccess = (data, res) => {
         type: ActionTypes.FETCH_USERS_SUCCESS,
         payload: { res },
       });
-    case 'testFlights':
+    case 'tests':
       return ({
         type: ActionTypes.FETCH_TESTFLIGHTS_SUCCESS,
         payload: { res },
@@ -92,7 +75,7 @@ const fetchDataFailure = (data, error) => {
         type: ActionTypes.FETCH_USERS_FAILURE,
         payload: { error },
       });
-    case 'testFlights':
+    case 'tests':
       return ({
         type: ActionTypes.FETCH_TESTFLIGHTS_FAILURE,
         payload: { error },
@@ -102,20 +85,38 @@ const fetchDataFailure = (data, error) => {
   }
 };
 
-const fetchData = data => dispatch => {
-  dispatch(fetchDataBegin(data));
-  return fetch(`http:localhost:3001/api/v1/${data}.json`)
-    .then(handleErrors)
+
+const getData = model => dispatch => {
+  dispatch(fetchDataBegin(model));
+  return fetch(`http://localhost:3001/api/v1/${model}.json`)
     .then(res => res.json())
     .then(json => {
-      dispatch(fetchDataSuccess(data, json));
+      dispatch(fetchDataSuccess(model, json));
       return json;
     })
-    .catch(error => dispatch(fetchDataFailure(data, error)));
+    .catch(error => dispatch(fetchDataFailure(model, error)));
 };
 
+const postData = (model, data) => dispatch => fetch(`http://localhost:3001/api/v1/${model}.json`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+})
+  .then(res => res.json())
+  .then(json => {
+    dispatch(getData(model));
+    return json;
+  });
+
+const deleteData = (model, id) => dispatch => fetch(`http://localhost:3001/api/v1/${model}/${id}`, {
+  method: 'DELETE',
+})
+  .then(res => {
+    dispatch(getData(model));
+    return res;
+  });
+
 export {
-  changeFilter, selectAircraft, scheduleTestFlight, cancelTestFlight,
-  changeFormVisibility, loginUser, logoutUser, fetchDataBegin,
-  fetchDataSuccess, fetchDataFailure, handleErrors, fetchData,
+  changeFilter, selectAircraft, changeFormVisibility, loginUser, logoutUser,
+  fetchDataBegin, fetchDataSuccess, fetchDataFailure, getData, postData, deleteData,
 };

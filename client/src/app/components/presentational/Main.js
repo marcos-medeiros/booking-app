@@ -7,21 +7,21 @@ import ScheduleForm from './ScheduleForm';
 import Button from './Button';
 
 const Main = ({
-  aircraft, scheduleTestFlight, formVisibility, changeFormVisibility, user, logoutUser,
+  aircraft, formVisibility, changeFormVisibility, user, logoutUser, postData,
 }) => {
   const onClick = date => {
     const convertedDate = moment(date);
     const formatedDate = convertedDate.format('MMMM Do YYYY, h:mm a');
-    scheduleTestFlight({
-      userId: user.id, aircraftId: aircraft.id, date: formatedDate,
-    });
+
+    postData('tests', { user_id: user.id, aircraft_id: aircraft.id, date: formatedDate });
     changeFormVisibility();
   };
+
 
   return (
     <>
       <main>
-        <AircraftImage src={aircraft.imgSrc} alt={`${aircraft.manufacturer} - ${aircraft.model}`} />
+        <AircraftImage src={aircraft.image} alt={`${aircraft.manufacturer} - ${aircraft.model}`} />
         {
           formVisibility
             ? <ScheduleForm onClick={onClick} onCancel={changeFormVisibility} />
@@ -42,9 +42,8 @@ Main.propTypes = {
     category: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     manufacturer: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired,
-  scheduleTestFlight: PropTypes.func.isRequired,
   formVisibility: PropTypes.bool.isRequired,
   changeFormVisibility: PropTypes.func.isRequired,
   user: PropTypes.shape({
@@ -52,6 +51,7 @@ Main.propTypes = {
     id: PropTypes.number.isRequired,
   }).isRequired,
   logoutUser: PropTypes.func.isRequired,
+  postData: PropTypes.func.isRequired,
 
 };
 

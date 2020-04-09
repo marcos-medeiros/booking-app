@@ -5,6 +5,7 @@ import filter from './filter';
 import main from './main';
 import aircrafts from './aircrafts';
 import user from './user';
+import users from './users';
 import formVisibility from './formVisibility';
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   main,
   aircrafts,
   user,
+  users,
   formVisibility,
 });
 
