@@ -29,6 +29,7 @@ Start the rails server:
 
 - `cd api-server/`
 - `bundle`
+- `rails db:setup`
 - `rails s`
 
 The server will be hosted at localhost:3001.
