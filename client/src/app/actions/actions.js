@@ -88,7 +88,7 @@ const fetchDataFailure = (data, error) => {
 
 const getData = model => dispatch => {
   dispatch(fetchDataBegin(model));
-  return fetch(`https://aerotest-api.herokuapp.com/api/v1/${model}.json`)
+  return fetch(`/api/v1/${model}.json`)
     .then(res => res.json())
     .then(json => {
       dispatch(fetchDataSuccess(model, json));
@@ -97,7 +97,7 @@ const getData = model => dispatch => {
     .catch(error => dispatch(fetchDataFailure(model, error)));
 };
 
-const postData = (model, data) => dispatch => fetch(`https://aerotest-api.herokuapp.com/api/v1/${model}.json`, {
+const postData = (model, data) => dispatch => fetch(`/api/v1/${model}.json`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
@@ -108,7 +108,7 @@ const postData = (model, data) => dispatch => fetch(`https://aerotest-api.heroku
     return json;
   });
 
-const deleteData = (model, id) => dispatch => fetch(`https://aerotest-api.herokuapp.com/api/v1/${model}/${id}`, {
+const deleteData = (model, id) => dispatch => fetch(`/api/v1/${model}/${id}`, {
   method: 'DELETE',
 })
   .then(res => {
