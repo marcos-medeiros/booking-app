@@ -1,22 +1,26 @@
 {
-  "name": "aero-test-deploy",
-  "version": "1.0.0",
-  "description": "Booking App",
-  "main": "index.js",
+  "name": "api_server",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "turbolinks": "^5.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm install && npm run build && cd ..",
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },  
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcos-medeiros/booking-app.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marcos-medeiros/booking-app/issues"
-  },
-  "homepage": "https://github.com/marcos-medeiros/booking-app#readme"
+  "engines": {
+    "yarn": "1.22.4",
+    "npm": "6.13.7",
+    "node": "13.11.0"
+  }
 }
