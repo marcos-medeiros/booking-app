@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Button from './Button';
+import Button from '../presentational/Button';
+import { loginUser, postData, getData } from '../../actions/actions';
 
 
 class Login extends React.Component {
@@ -14,22 +16,32 @@ class Login extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleChange(value) {
-    this.setState({ inputValue: value });
+  componentDidMount() {
+    const { getData } = this.props;
+    getData('users');
   }
 
   handleClick() {
-    const { onClick, users, postData } = this.props;
+    const {
+      loginUser, users, postData, getData,
+    } = this.props;
     const { inputValue } = this.state;
 
     const user = users.filter(u => u.name === inputValue)[0];
 
+    getData('tests');
+    getData('aircrafts');
+
     if (user === undefined) {
       postData('users', { user: { name: inputValue } });
-      onClick({ name: inputValue, id: users.length + 1 });
+      loginUser({ name: inputValue, id: users.length + 1 });
     } else {
-      onClick(user);
+      loginUser(user);
     }
+  }
+
+  handleChange(value) {
+    this.setState({ inputValue: value });
   }
 
 
@@ -49,12 +61,27 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
   users: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   })).isRequired,
   postData: PropTypes.func.isRequired,
+  getData: PropTypes.func.isRequired,
 };
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  loginUser: (username, users) => {
+    dispatch(loginUser(username, users));
+  },
+  postData: (model, data) => {
+    postData(model, data)(dispatch);
+  },
+  getData: model => {
+    getData(model)(dispatch);
+  },
+});
+
+const mapStateToProps = state => ({ users: state.users.items });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

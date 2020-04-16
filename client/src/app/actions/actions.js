@@ -85,7 +85,6 @@ const fetchDataFailure = (data, error) => {
   }
 };
 
-
 const getData = model => dispatch => {
   dispatch(fetchDataBegin(model));
   return fetch(`http://localhost:3001/api/v1/${model}.json`)
