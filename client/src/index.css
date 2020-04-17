@@ -164,6 +164,7 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     text-align: left;
+    cursor: pointer;
   }
 
   .selected-item {
@@ -260,4 +261,8 @@ body {
     position: absolute;
     bottom: 50px;
     right: 35%;
+  }
+
+  .pointer {
+    cursor: pointer;
   }
