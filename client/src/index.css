@@ -164,6 +164,11 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     text-align: left;
+    cursor: pointer;
+  }
+
+  .pointer {
+    cursor: pointer;
   }
 
   .selected-item {

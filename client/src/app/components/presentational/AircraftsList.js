@@ -30,7 +30,7 @@ AircraftsList.propTypes = {
     category: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     manufacturer: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired,
 };
 

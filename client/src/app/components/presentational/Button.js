@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ buttonText, onClick, styleClass }) => (
   /*eslint-disable */
-  <button className={styleClass} onClick={onClick}>
+  <button className={`${styleClass} pointer`} onClick={onClick}>
   {/* eslint-enable */}
     <p>{buttonText}</p>
   </button>
