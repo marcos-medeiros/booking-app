@@ -5,6 +5,7 @@
 
 * [About](#about)
 * [How to install](#install)
+* [How to test](#test)
 * [Used tools](#tools)
 * [Author](#author)
 
@@ -41,6 +42,14 @@ Now, move to the root directory and start the react client:
 - `npm start`
 
 Open your browser at localhost:3000
+
+<a name="test"></a>
+## How to test
+
+After the install process:
+
+- `cd api-server/`
+- `rails spec`
 
 <a name="tools"></a>
 ### Used tools
