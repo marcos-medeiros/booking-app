@@ -7,6 +7,7 @@
 * [How to install](#install)
 * [How to test](#test)
 * [Used tools](#tools)
+* [Next features](#next-features)
 * [Author](#author)
 
 <a name="about"></a>
@@ -63,6 +64,11 @@ This project was built using these technologies.
 - Webpack
 - HTML
 - CSS3
+
+<a name="next-features"></a>
+## Next Features
+
+- Implement a schedule table for each aircraft that enables the user to see which time blocks are available for that aircraft (Cross data from all users to make sure which time blocks are available and which are not).
 
 <a name="author"></a>
 ## Author
